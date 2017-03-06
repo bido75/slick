@@ -7,7 +7,6 @@ import ChannelDetail from './ChannelDetail.jsx';
 export default class Root extends Component{
   render (){
     return <div>
-      <p>Root</p>
       <Channel/>
       <ChannelDetail/>
     </div>

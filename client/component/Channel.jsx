@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 
 export default class Channel extends Component{
   render (){
-    return <ul>
-      <li>General</li>
-      <li>Random</li>
-    </ul>
+
+    const channels = [{ name: 'general' }, { name: 'foobar' }];
+
+    const myChannelList = channels.map(data =>
+      <li key={data.name}>{data.name}</li>
+    );
+    return <ul>{myChannelList}</ul>;
   }
 }
