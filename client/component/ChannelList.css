@@ -1,0 +1,11 @@
+.channelList {
+  position: relative;
+  width: 13.75rem;
+  max-width: 260px;
+  /*-ms-flex: 0 0 13.75rem;
+  -webkit-flex: 0 0 13.75rem;*/
+  flex: 0 0 13.75rem;
+  background: #4d394b;
+  list-style: none;
+  color: #fafafa
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class Channel extends Component{
+export default class ChannelList extends Component{
   render (){
 
     const channels = [{ name: 'general' }, { name: 'foobar' }];
@@ -8,6 +8,6 @@ export default class Channel extends Component{
     const myChannelList = channels.map(data =>
       <li key={data.name}>{data.name}</li>
     );
-    return <ul>{myChannelList}</ul>;
+    return <ul className="channelList">{myChannelList}</ul>;
   }
 }

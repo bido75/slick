@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 
 export default class NewMessageForm extends Component{
   render (){
-    return <p>New Message Form </p>
+    return <form className="NewClassForm" onSubmit={e => this.handleSubmit(e)} >
+      <input ref="messageInput"></input>
+      <button type="submit"></button>
+    </form>
   }
+  handleSubmit(e){
+   e.preventDefault();
+   console.log(this.refs.messageInput.value);
+ }
+
 }
