@@ -5,11 +5,11 @@ Metoer slack clone
 <Root>
 <ChannelList />
 <ChannelDetail>
-  <History>
-    <Message />
-    <Message />
-    <Message />
-  </History>
+  <ChannelHistory>
+    <ChannelMessage />
+    <ChannelMessage />
+    <ChannelMessage />
+  </ChannelHistory>
   <NewMessageForm />
 </ChannelDetail>
 </Root>

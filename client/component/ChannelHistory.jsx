@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Message from './Message.jsx'
+import ChannelMessages from './ChannelMessages.jsx'
 
 export default class ChannelHistory extends Component{
   render (){
