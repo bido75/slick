@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
-import { Root, Foo } from './component/Root.jsx';
+import  Root from './component/Root.jsx';
 
 
 Meteor.startup(()=>{
