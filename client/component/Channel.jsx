@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ChannelMessages from './ChannelMessages.jsx'
 import NewMessageForm from './NewMessageForm.jsx'
 
-export default class Channel extends Component{
+class Channel extends Component{
   render (){
         const myMessages = [{id: 1, handle: 'rainede' , message: 'does it work like this' },{ id: 2, handle: 'jaapm' , message: 'consistently erroring' },{ id:3, handle: 'maciej' , message: 'am going to hold another one of these classes' }];
     return <div className="Channel">
@@ -11,3 +11,6 @@ export default class Channel extends Component{
   </div>
 };
 }
+
+
+export default Channel;
