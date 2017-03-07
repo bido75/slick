@@ -5,9 +5,15 @@ export default class ChannelList extends Component{
 
     const channels = [{ name: 'general' }, { name: 'foobar' }];
 
-    const myChannelList = channels.map(data =>
-      <li key={data.name}>{data.name}</li>
-    );
-    return <ul className="channelList">{myChannelList}</ul>;
+    return (
+      <div className='ChannelList'>
+        <h3>{`CHANNELS (${channels.length})`}</h3>
+        <ul>
+          {channels.map(data =>
+            <li key={data.name}>{`#${data.name}`}</li>
+          )}
+        </ul>
+      </div>
+    )
   }
 }

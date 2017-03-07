@@ -4,7 +4,7 @@ import ChannelMessage from './ChannelMessage.jsx'
 const ChannelMessages = (props)=> {
   const myChannelMessages =props.messages.map(
     message => <li key={message.id}><ChannelMessage {...message}/></li>);
-  return <ul>{myChannelMessages}</ul>;
+  return <ul className="ChannelMessages">{myChannelMessages}</ul>;
 }
 
 export default ChannelMessages;
