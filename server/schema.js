@@ -21,7 +21,7 @@ type Message{
 
 type Query{
   channels: [Channel]
-  # channel(name: String!): Channel
+  channel(name: String!): Channel
 }
 
 type Mutation{
