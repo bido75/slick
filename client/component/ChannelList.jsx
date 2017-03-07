@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
-export default class ChannelList extends Component{
+class ChannelList extends Component {
   render (){
-
-    const channels = [{ name: 'general' }, { name: 'foobar' }];
-
+    if (this.props.data.loading){
+      return <div>Loading...</div>
+    }
+    const channels = this.props.data.channels;
     return (
       <div className='ChannelList'>
         <h3>{`CHANNELS (${channels.length})`}</h3>
@@ -17,3 +20,18 @@ export default class ChannelList extends Component{
     )
   }
 }
+
+const query = gql`
+  query ChannelList {
+    channels{
+      name
+    }
+  }
+`;
+
+// export default ChannelList;
+export default graphql( query, {
+    options: {
+      pollInterval: 10000
+    },
+  })(ChannelList);
