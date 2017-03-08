@@ -16,15 +16,14 @@ class Channel extends Component{
     }
     if (this.props.data.error){
       return (
-        <div className= "Channel">
+        <div className="Channel">
           Something went wrong!
         </div>
       )
     }
 
     const messages = this.props.data.channel.messages;
-    console.log("channel messages", messages);
-        // const myMessages = [{id: 1, handle: 'rainede' , message: 'does it work like this' },{ id: 2, handle: 'jaapm' , message: 'consistently erroring' },{ id:3, handle: 'maciej' , message: 'am going to hold another one of these classes' }];
+
     return <div className="Channel">
     <ChannelMessages messages={messages} />
     <NewMessageForm/>
@@ -35,6 +34,7 @@ class Channel extends Component{
 const query = gql`
   query getChannels($name: String!){
   channel(name: $name){
+    _id
     name
     messages {
       id
@@ -45,11 +45,12 @@ const query = gql`
 }`;
 
 // export default Channel;
-export default graphql( query, {
-    options: {
-      pollInterval: 10000,
+const ChannelWithData = graphql( query, {
+    options: ownProps =>({
       variables: {
-        name: "General"
+        name: ownProps.params.channelName
       }
-    },
+    })
   })(Channel);
+
+  export default ChannelWithData;
