@@ -1,14 +1,27 @@
 import React, {Component} from 'react';
-import ChannelMessages from './ChannelMessages.jsx'
-import NewMessageForm from './NewMessageForm.jsx'
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+
+import ChannelMessages from './ChannelMessages.jsx'
+import NewMessageForm from './NewMessageForm.jsx'
 
 class Channel extends Component{
   render (){
     if (this.props.data.loading){
-      return <div>Loading...</div>
+      return (
+        <div className="Channel">
+          Loading...
+        </div>
+      )
     }
+    if (this.props.data.error){
+      return (
+        <div className= "Channel">
+          Something went wrong!
+        </div>
+      )
+    }
+
     const messages = this.props.data.channel.messages;
     console.log("channel messages", messages);
         // const myMessages = [{id: 1, handle: 'rainede' , message: 'does it work like this' },{ id: 2, handle: 'jaapm' , message: 'consistently erroring' },{ id:3, handle: 'maciej' , message: 'am going to hold another one of these classes' }];
