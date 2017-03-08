@@ -14,7 +14,15 @@ class Channel extends Component{
         </div>
       )
     }
+    if (!this.props.data.channel)
+    {
+      <div className="Channel">
+        There is no such channel
+      </div>
+    }
+
     if (this.props.data.error){
+      console.log(this.props.data.error)
       return (
         <div className="Channel">
           Something went wrong!
@@ -22,23 +30,24 @@ class Channel extends Component{
       )
     }
 
-    const messages = this.props.data.channel.messages;
+    const messages =
+     this.props.data.channel.messages;
 
     return (
       <div className="Channel">
         <ChannelMessages messages={messages} />
-        <ChannelMessageForm/>
+        <ChannelMessageForm channelName={this.props.data.channel.name}/>
       </div>
     )
 };
 }
 
 const query = gql`
-  query getChannels($name: String!){
+  query getChannel($name: String!){
   channel(name: $name){
     name
     messages {
-      id
+      _id
       handle
       text
     }

@@ -1,19 +1,3 @@
-// const channels = [
-//   {
-//     name: 'foo',
-//     messages: [
-//       {id:1 ,handle: 'jasper', text: 'Are you ready for lunch?'},
-//       {id:3 ,handle: 'rainey', text: 'Just after this please'}
-//     ]
-//   },
-//   {
-//     name: 'bar',
-//     messages:[
-//       {id:2 ,handle: 'rainey', text: 'Just after this please'}
-//     ]
-//   }
-// ];
-
 const resolvers = {
   Query:{
     channels(obj, arg, context){
@@ -29,7 +13,10 @@ const resolvers = {
       return context.Channels.createChannel(arg.name)
     },
     createMessage(obj, arg, context){
-      return context.Channels.createMessage(arg.channelName,arg.messageUser, arg.messageBody)
+      return  context.Channels.createMessage(arg.channelName,arg.messageUser, arg.messageBody)
+      // if(context.user){
+
+    // }
     }
   },
 };

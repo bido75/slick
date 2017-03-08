@@ -3,11 +3,11 @@ import gql from 'graphql-tag';
 
 
 const mutation = gql`
-  mutation post($channelName: String!, $message: String!){
-    post(channelName: $channelName, message: $message){
-      id handle message
+  mutation createMessageMutation($channelName: String!,$messageUser:String!,  $messageBody: String!){
+    createMessage(channelName: $channelName, messageUser:$messageUser,  messageBody: $messageBody){
+      _id handle text
     }
   }
 `;
 
-export default graphql(mutation);
+export default graphql(mutation, {alias: 'ChannelMessageMutation'});

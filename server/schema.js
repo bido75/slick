@@ -1,5 +1,6 @@
 export default `
 type Channel{
+  _id : String!
 	name: String!  #name of the channel,required
 	messages: [Message]! #messages, required , 0 or more
   #members: [handle]
@@ -14,7 +15,7 @@ type Channel{
 #   posts: [Message]
 # }
 type Message{
-	id: Int!
+	_id: String!
 	handle: String!
 	text: String!
 }

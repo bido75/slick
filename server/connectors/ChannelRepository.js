@@ -1,5 +1,6 @@
 // Responsible for talking to MongoDB
 // Does the plumbing
+import uuid from 'uuid';
 import Channels from '../collections';
 
 class ChannelRepository{
@@ -13,7 +14,7 @@ class ChannelRepository{
   };
   createMessage(channelName,userHandle, messageBody){
     const myMessage = {
-      id : 1,
+      _id: uuid.v4(),
       handle: userHandle,
       text: messageBody
     }
