@@ -22,7 +22,7 @@ class ChannelList extends Component {
 }
 
 const query = gql`
-  query ChannelList {
+  query getChannelList {
     channels{
       name
     }
