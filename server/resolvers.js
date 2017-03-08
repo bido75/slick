@@ -22,7 +22,6 @@ const resolvers = {
     channel(obj, arg, context){
       console.log("before return",obj,  arg.name);
       return context.Channels.getChannel(arg.name);
-      console.log("after return", arg.name);
     },
   },
   Mutation:{
@@ -30,7 +29,7 @@ const resolvers = {
       return context.Channels.createChannel(arg.name)
     },
     createMessage(obj, arg, context){
-      return context.Channels.createMessage(arg.channelName,arg.userHandle, arg.messageBody)
+      return context.Channels.createMessage(arg.channelName,arg.messageUser, arg.messageBody)
     }
   },
 };

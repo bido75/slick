@@ -7,7 +7,9 @@ class ChannelRepository{
     return Channels.find().fetch();
   };
   getChannel(name){
-    return Channels.findOne({name});
+    const myChannel = Channels.findOne({name});
+    console.log('get channel', myChannel.messages);
+    return myChannel;
   };
   createMessage(channelName,userHandle, messageBody){
     const myMessage = {
@@ -17,7 +19,7 @@ class ChannelRepository{
     }
     const updated = Channels.update({name: channelName},{
       $addToSet:{
-        messages: [myMessage]
+        messages: myMessage
       }
     });
     if (updated){
