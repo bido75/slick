@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
-import Root from './Roots.jsx';
+import Root from './Root.jsx';
 import Home from './Home.jsx';
 import ChannelWithData from './Channel.jsx'
 // import CreateChannel from

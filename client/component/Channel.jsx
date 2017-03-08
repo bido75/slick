@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
 import ChannelMessages from './ChannelMessages.jsx'
-import NewMessageForm from './NewMessageForm.jsx'
+import ChannelMessageForm from './ChannelMessageForm.jsx'
 
 class Channel extends Component{
   render (){
@@ -24,17 +24,18 @@ class Channel extends Component{
 
     const messages = this.props.data.channel.messages;
 
-    return <div className="Channel">
-    <ChannelMessages messages={messages} />
-    <NewMessageForm/>
-  </div>
+    return (
+      <div className="Channel">
+        <ChannelMessages messages={messages} />
+        <ChannelMessageForm/>
+      </div>
+    )
 };
 }
 
 const query = gql`
   query getChannels($name: String!){
   channel(name: $name){
-    _id
     name
     messages {
       id
